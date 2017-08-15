@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>UserPage</title>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <a href="/robotDelete/{{id}}">Delete</a>
     <div class="personalInfo">
-      {{#robots}}
         {{#avatar}}
           <img src={{avatar}} alt="suppose to be an avatar.">
         {{/avatar}}
@@ -15,13 +15,12 @@
           <img src="./public/download.png" alt="Image of Robot suppose to go here.">
         {{/avatar}}
         <h1>{{username}}</h1>
-        {{#address}}<p class="currentLinving">{{address}} </p>{{/address}}
-        {{#job}}<p class="career">{{Job}}, {{Company}}</p>{{/job}}
+        {{#address}}<p class="currentLinving">{{address.city}} {{address.country}} </p>{{/address}}
+        {{#job}}<p class="career">{{job}}, {{company}}</p>{{/job}}
         {{^job}}<p class="forHire">Available for hire</p>{{/job}}
-        <p class="communication">{{Email}}, {{Phone}}</p>
+        <p class="communication">{{email}}, {{phone}}</p>
         {{#university}} <p class="userSchool">Education: {{university}}</p>{{/university}}
         {{^university}}<p class="userSchool"></p>{{/university}}
-      {{/robots}}
     </div>
   </body>
 </html>
